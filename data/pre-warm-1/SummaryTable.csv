@@ -1,0 +1,7 @@
+metric,no_cache,cache,advantage
+questions,10,10,
+avg cost / question (USD),0.3159,0.0353,8.9x cheaper
+"total cost, questions only (USD)",3.1588,0.3530,8.9x
+one-time pre-warm (USD),0.0000,0.3897,
+session total incl. pre-warm (USD),3.1588,0.7427,4.3x cheaper
+avg latency / question (ms),8867,8449,1.05x (parity)
