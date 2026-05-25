@@ -34,7 +34,7 @@ Blocks can have very different token sizes. A single text block could have 5 or 
 
 **Cache Hit**: A match between prefixes. The cached prefix and the prefix of a new request match so the input can be reused at roughly 10% the standard input token rate. A new response is still generated.
 
-**Cache Miss**: A new request’s prefix doesn’t match a cached entry. The API  processes the prompt and writes it to a prefix in the cache for next time if cache_control is set. This cache write costs roughly 25% more than standard input tokens. If cache_control isn’t set, the request is processed at the standard input token rate, but no cache is set.
+**Cache Miss**: A new request’s prefix doesn’t match a cached entry. The API processes the prompt and writes it to a prefix in the cache for next time if cache_control is set. This cache write costs roughly 25% more than standard input tokens. If cache_control isn’t set, the request is processed at the standard input token rate, but no cache is set.
 
 ## 5. The Pattern
 In this tutorial, we’ll be implementing prompt caching on an AI assistant that is triggered by a user’s click of a help button. We eliminate a common UX back and forth where the assistant asks “what can I help with?”, by populating Claude’s context before the user’s first question. This is an eager-on-intent approach.
