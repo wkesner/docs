@@ -19,6 +19,12 @@
               "tutorials/Prompt_Caching_for_Customer_Service"
             ]
           },
+          {
+            "group": "Document Automation",
+            "pages": [
+              "document_automation/japan_forms"
+            ]
+          },          
           
           {
             "group": "Getting started",
