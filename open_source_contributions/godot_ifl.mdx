@@ -1,6 +1,6 @@
 ---
-Title: “Documenting the Godot Game Engine’s ImageFormatLoader LoaderFlags”
-Description: ”A verified documentation contribution to the Godot game engine's class reference”
+title: "Documenting the Godot Game Engine’s ImageFormatLoader LoaderFlags"
+description: "A verified documentation contribution to the Godot game engine's class reference"
 ---
 
 ## Overview
@@ -17,9 +17,8 @@ Godot has a strict AI disclosure policy as well, so I had to articulate how I wa
 
 **I used Claude Opus 4.7 (Anthropic) as a learning and editing aid while writing these descriptions. Specifically, it helped me with the LoaderFlags bitfield concept and walked me through the Git/PR workflow as a first-time contributor. I identified which image loaders use each flag and verified their behavior by reading their source code myself. The final wording is my own.**
 
-## Figuring out Flags
+## Conclusion
 `FLAG_FORCE_LINEAR` triggers an sRGB-to-linear conversion across the PNG, HDR, TinyEXR, and SVG loaders. `FLAG_CONVERT_COLORS` applies a color map in the SVG loader, set by the texture importer for editor theming. That said, not all this information belonged in the PR. With the maintainer’s guidance some of this extraneous information was removed. I did also miss a relationship to `ResourceImporterTexture.editor` in `FLAG_CONVERT_COLORS`. With these maintainer’s help, and a manual commit squash, the PR is approved and awaiting a merge. 
 
-## Conclusion
-I’ve used github for a few personal projects over the years, but this was the first contribution I’ve made to a public, open source project. This was a new exercise for me. It taught me a bit more about where to look when documentation is missing, how to conform my technical language to a particular project, and how to work with community members who have feedback for you. If you’d like to check it out yourself, you can do so at the following link:
-[Github PR](https://github.com/godotengine/godot/pull/119612)
+I’ve used GitHub for a few personal projects over the years, but this was the first contribution I’ve made to a public, open source project. This was a new exercise for me. It taught me a bit more about where to look when documentation is missing, how to conform my technical language to a particular project, and how to work with community members who have feedback for you. If you’d like to check it out yourself, you can do so at the following link:
+[GitHub PR](https://github.com/godotengine/godot/pull/119612)
