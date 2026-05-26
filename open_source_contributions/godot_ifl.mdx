@@ -1,0 +1,25 @@
+---
+Title: “Documenting the Godot Game Engine’s ImageFormatLoader LoaderFlags”
+Description: ”A verified documentation contribution to the Godot game engine's class reference”
+---
+
+## Overview
+[Godot](https://godotengine.org/) is an open source video game engine that has risen to prominence over the last 10 years. It’s not an engine I’ve used as extensively as Unity or Unreal, but I am a fan of what it’s doing.
+
+## Picking a Class
+I’ve got a background in photography and video so I figured an incomplete class related to images would be a good fit as a first PR. I picked `ImageFormatLoader`. It was considered 87% complete. With a short description, it primarily served as a link into the `ImageFormatLoaderExtension` class that you’d use to add more file format support to your game. It also had three `LoaderFlags` that lacked descriptions. `FLAG_NONE`, `FLAG_FORCE_LINEAR`, and `FLAG_CONVERT_COLORS`.
+
+Initial searches in the documentation turned up very little. `FLAG_NONE` is mentioned in two other classes, `FLAG_FORCE_LINEAR` is referenced in one other class, and `FLAG_CONVERT_COLORS` is referenced in no others. What little was there wasn’t all that descriptive. I thought I might have to move onto another class. Before switching gears, I decided to dive into the engine’s C++ code for clues.
+
+This was the right move. There were plenty of commented examples of these flags being used in the engine code. It was possible to piece together much of their meaning in an hour. I used Claude Opus as a quick gut check after verifying functionality myself.
+
+Godot has a strict AI disclosure policy as well, so I had to articulate how I was using it effectively in my initial PR submission:
+
+**I used Claude Opus 4.7 (Anthropic) as a learning and editing aid while writing these descriptions. Specifically, it helped me with the LoaderFlags bitfield concept and walked me through the Git/PR workflow as a first-time contributor. I identified which image loaders use each flag and verified their behavior by reading their source code myself. The final wording is my own.**
+
+## Figuring out Flags
+`FLAG_FORCE_LINEAR` triggers an sRGB-to-linear conversion across the PNG, HDR, TinyEXR, and SVG loaders. `FLAG_CONVERT_COLORS` applies a color map in the SVG loader, set by the texture importer for editor theming. That said, not all this information belonged in the PR. With the maintainer’s guidance some of this extraneous information was removed. I did also miss a relationship to `ResourceImporterTexture.editor` in `FLAG_CONVERT_COLORS`. With these maintainer’s help, and a manual commit squash, the PR is approved and awaiting a merge. 
+
+## Conclusion
+I’ve used github for a few personal projects over the years, but this was the first contribution I’ve made to a public, open source project. This was a new exercise for me. It taught me a bit more about where to look when documentation is missing, how to conform my technical language to a particular project, and how to work with community members who have feedback for you. If you’d like to check it out yourself, you can do so at the following link:
+[Github PR](https://github.com/godotengine/godot/pull/119612)

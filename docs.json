@@ -19,12 +19,20 @@
               "tutorials/Prompt_Caching_for_Customer_Service"
             ]
           },
+
           {
             "group": "Document Automation",
             "pages": [
               "document_automation/japan_forms"
             ]
-          },          
+          },    
+          
+          {
+            "group": "Open Source Contributions",
+            "pages": [
+              "open_source_contributions/godot_ifl"
+            ]
+          },   
           
           {
             "group": "Getting started",
